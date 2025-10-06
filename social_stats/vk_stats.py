@@ -27,10 +27,6 @@ class VKStats:
         }
         response = requests.get(url, params=params).json()
 
-        # для отладки можно включить
-        # import json
-        # print(json.dumps(response, indent=2, ensure_ascii=False))
-
         if 'error' in response:
             raise Exception(response['error']['error_msg'])
         else:
@@ -84,7 +80,7 @@ if __name__ == "__main__":
     vk_api_key = VK_API_KEY
     group_id = VK_GROUP_ID
     start_date = '2025-10-01'
-    end_date = '2025-10-05'
+    end_date = '2025-10-06'
 
     vk_stats = VKStats(vk_api_key, group_id)
     stats = vk_stats.get_stats(start_date, end_date)
