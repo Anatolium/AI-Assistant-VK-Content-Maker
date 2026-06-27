@@ -5,7 +5,7 @@ from generators.text_gen import PostGenerator
 from generators.image_gen import ImageGenerator
 from social_publishers.vk_publisher import VKPublisher
 from social_stats.vk_stats import VKStats
-from config import OPENAI_API_KEY
+from config import PROXYAPI_KEY, BASE_URL
 import datetime
 
 
@@ -48,12 +48,12 @@ def post_generator():
 
         user = User.query.get(session['user_id'])
 
-        post_gen = PostGenerator(OPENAI_API_KEY, tone, topic)
+        post_gen = PostGenerator(PROXYAPI_KEY, BASE_URL, tone, topic)
         post_content = post_gen.generate_post()
 
         image_url = None
         if generate_image:
-            image_gen = ImageGenerator(OPENAI_API_KEY)
+            image_gen = ImageGenerator(PROXYAPI_KEY, BASE_URL)
             image_prompt = post_gen.generate_post_image_description()
             image_url = image_gen.generate_image(image_prompt)
 

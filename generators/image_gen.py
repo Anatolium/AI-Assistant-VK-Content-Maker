@@ -1,8 +1,8 @@
 from openai import OpenAI
 
 class ImageGenerator:
-    def __init__(self, openai_key):
-        self.client = OpenAI(api_key=openai_key)
+    def __init__(self, openai_key, base_url):
+        self.client = OpenAI(api_key=openai_key, base_url=base_url)
 
     def generate_image(self, prompt):
         response = self.client.images.generate(

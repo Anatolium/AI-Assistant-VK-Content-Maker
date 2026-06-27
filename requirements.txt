@@ -1,0 +1,8 @@
+flask==3.0.2
+flask-cors==4.0.0
+python-dotenv==1.0.1
+openai>=1.35.0
+requests==2.31.0
+flask_bcrypt
+flask_sqlalchemy
+flask_wtf

@@ -1,8 +1,8 @@
 from openai import OpenAI
 
 class PostGenerator:
-    def __init__(self, openai_key, tone, topic):
-        self.client = OpenAI(api_key=openai_key)
+    def __init__(self, openai_key, base_url, tone, topic):
+        self.client = OpenAI(api_key=openai_key, base_url=base_url)
         self.tone = tone
         self.topic = topic
 
