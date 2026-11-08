@@ -49,6 +49,7 @@
 - **Requests**
 
 ## Структура проекта
+```text
 .
 ├── app/
 │   ├── __init__.py
@@ -74,6 +75,7 @@
 ├── main.py
 ├── requirements.txt
 └── README.md
+```
 
 ## Установка и запуск
 
